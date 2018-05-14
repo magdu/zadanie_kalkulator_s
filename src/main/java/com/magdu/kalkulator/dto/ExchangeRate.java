@@ -16,16 +16,16 @@ public class ExchangeRate {
   private BigDecimal mid;
 
   @JsonCreator
+  public ExchangeRate(@JsonProperty("currencyCode") String currencyCode, @JsonProperty("rates") Map<String, Object>[] rates) {
+    this.currencyCode = currencyCode;
+    this.effectiveDate = (String) rates[0].get("effectiveDate");
+    this.mid = BigDecimal.valueOf((Double) rates[0].get("mid"));
+  }
+
   public ExchangeRate(String currencyCode, String effectiveDate, BigDecimal mid) {
     this.currencyCode = currencyCode;
     this.effectiveDate = effectiveDate;
     this.mid = mid;
-  }
-
-  @JsonProperty("rates")
-  private void unpackNested(Map<String, Object>[] rates) {
-    this.effectiveDate = (String) rates[0].get("effectiveDate");
-    this.mid = BigDecimal.valueOf((Double) rates[0].get("mid"));
   }
 
   public String getCurrencyCode() {
