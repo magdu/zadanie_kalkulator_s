@@ -14,7 +14,7 @@ export class AppComponent {
   countries =[
       { name: 'Poland', symbol: 'PL' },
       { name: 'Germany', symbol: 'DE' },
-      { name: 'Great Britain', symbol: 'UK' }
+      { name: 'United Kingdom', symbol: 'UK' }
       ];
   data = {};
 

@@ -51,7 +51,7 @@
                     <nodeVersion>v8.11.1</nodeVersion>
                 </configuration>
                 <executions>
-                    <execution>
+              <!--      <execution>
                         <id>install-npm</id>
                         <goals>
                             <goal>install-node-and-npm</goal>
@@ -62,7 +62,7 @@
                       <goals>
                         <goal>npm</goal>
                       </goals>
-                    </execution>
+                    </execution>-->
                   <execution>
                     <id>npm-build</id>
                     <goals>
