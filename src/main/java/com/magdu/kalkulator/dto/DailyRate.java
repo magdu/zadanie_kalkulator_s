@@ -1,6 +1,6 @@
 package com.magdu.kalkulator.dto;
 
-import com.magdu.kalkulator.Country;
+import com.magdu.kalkulator.enums.Country;
 
 public class DailyRate {
 
