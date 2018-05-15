@@ -1,10 +1,10 @@
 
 
-Project is written using Spring Boot version 2.0.0 (with Tomcat embedded)
+Project is written using Spring Boot version 2.0.2 (with Tomcat embedded) and Angular version 6.0.1.
 
 ## Prerequisites
 You will need:
- - Apache Maven 3.0.3
+ - Apache Maven 3
  - Java 8
 
 ## Starting application
@@ -13,6 +13,7 @@ To start this application execute the following command from main project direct
 ```sh
 $ mvn clean spring-boot:run
 ```    
+*Note: this command doesn't run unit tests.*  
 
 Or prepare executable:
 ```sh
@@ -24,6 +25,8 @@ To start application run script `calculatorS.sh` from main project directory.
 Once the application is started, it can be reached at
 
     http://localhost:8080
+    
+You need to choose country of employment and provide correct daily rate (must be >=1). Then click *Compute* button to obtain monthly rate.    
 
 ## REST Endpoints
 
