@@ -6,6 +6,7 @@ Project is written using Spring Boot version 2.0.2 (with Tomcat embedded) and An
 You will need:
  - Apache Maven 3.5.x (tested with 3.5.3)
  - Java 8
+ 
 Tested on Windows 10.
  
 ## Starting application
