@@ -53,8 +53,10 @@
       <div class="panel panel-default">
         <!-- Default panel contents -->
         <div class="panel-heading">Results</div>
-        <div class="panel-body">
-          <p>Monthly rate: <span>{{data.monthlyRate | currency:'PLN':'code':'1.2-2'}}</span></p>
+        <div class="panel-body" *ngIf="data">
+          <p>Monthly rate: <span>{{data.monthlyRate | currency:'pln':'code':'1.2-2'}}</span></p>
+          <p>Computed for {{data.country.name}}, where taxes are {{data.country.taxes}}% and fixed costs {{data.country.fixedCosts | currency:data.country.currencyCode:'code':'1.2-2'}}.</p>
+          <p>Exchange rate for day: {{data.exchangeRate.effectiveDate}} is {{data.exchangeRate.mid}} ({{data.country.currencyCode}}/pln)</p>
         </div>
       </div>
     </div>

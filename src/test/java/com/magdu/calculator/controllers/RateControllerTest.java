@@ -1,6 +1,7 @@
 package com.magdu.calculator.controllers;
 
 import com.magdu.calculator.CalculatorSApplication;
+import com.magdu.calculator.dto.ExchangeRate;
 import com.magdu.calculator.dto.MonthlyRate;
 import com.magdu.calculator.enums.Country;
 import com.magdu.calculator.services.RateCalculationService;
@@ -37,10 +38,12 @@ public class RateControllerTest {
   @Test
   public void whenCorrectData_expectCorrectResponse() throws Exception {
     Mockito.when(rateCalculationService.getMonthlyRate(Country.PL, BigDecimal.valueOf(200)))
-      .thenReturn(new MonthlyRate(BigDecimal.valueOf(2364), Country.PL));
+      .thenReturn(new MonthlyRate(BigDecimal.valueOf(2364), Country.PL, new ExchangeRate("pln", "2018-05-15", BigDecimal.ONE)));
     mvc.perform(get("/rate?dailyRate=200&country=PL"))
       .andExpect(status().isOk())
-      .andExpect(jsonPath("$.monthlyRate", is(2364)));
+      .andExpect(jsonPath("$.monthlyRate", is(2364)))
+      .andExpect(jsonPath("$.exchangeRate.currencyCode", is("pln")))
+      .andExpect(jsonPath("$.exchangeRate.effectiveDate", is("2018-05-15")));
   }
 
   @Test

@@ -26,7 +26,7 @@ public class RateCalculationService {
       BigDecimal taxes = bruttoMonthlyRate.multiply(BigDecimal.valueOf(country.getTaxes())).divide(new BigDecimal(100));
       BigDecimal fixedCosts = new BigDecimal(country.getFixedCosts()).multiply(exchangeRateAmount);
       BigDecimal finalMonthlyRate = bruttoMonthlyRate.subtract(taxes).subtract(fixedCosts);
-      monthlyRate = new MonthlyRate(finalMonthlyRate, country);
+      monthlyRate = new MonthlyRate(finalMonthlyRate, country, exchangeRate);
     }
     return monthlyRate;
   }

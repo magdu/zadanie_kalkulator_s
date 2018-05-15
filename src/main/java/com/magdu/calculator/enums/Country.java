@@ -21,17 +21,14 @@ public enum Country {
     this.fixedCosts = fixedCosts;
   }
 
-  @JsonIgnore
   public String getCurrencyCode() {
     return currencyCode;
   }
 
-  @JsonIgnore
   public int getTaxes() {
     return taxes;
   }
 
-  @JsonIgnore
   public int getFixedCosts() {
     return fixedCosts;
   }

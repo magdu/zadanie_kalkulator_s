@@ -12,7 +12,7 @@ export class AppComponent {
   dailyRate;
   country = 'PL';
   countries;
-  data = {};
+  data;
   error;
   errorMessage;
 

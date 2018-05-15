@@ -9,9 +9,12 @@ public class MonthlyRate {
 
   private Country country;
 
-  public MonthlyRate(BigDecimal monthlyRate, Country country) {
+  private ExchangeRate exchangeRate;
+
+  public MonthlyRate(BigDecimal monthlyRate, Country country, ExchangeRate exchangeRate) {
     this.monthlyRate = monthlyRate;
     this.country = country;
+    this.exchangeRate = exchangeRate;
   }
 
   public BigDecimal getMonthlyRate() {
@@ -20,6 +23,10 @@ public class MonthlyRate {
 
   public Country getCountry() {
     return country;
+  }
+
+  public ExchangeRate getExchangeRate() {
+    return this.exchangeRate;
   }
 
 }
