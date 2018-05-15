@@ -1,4 +1,4 @@
-#Calculator computing monthly earning rate in different countries based on daily rate.
+## Calculator computing monthly earning rate in different countries based on daily rate.
 
 Project is written using Spring Boot version 2.0.2 (with Tomcat embedded) and Angular version 6.0.1.
 
