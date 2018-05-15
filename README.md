@@ -1,12 +1,13 @@
-
+#Calculator computing monthly earning rate in different countries based on daily rate.
 
 Project is written using Spring Boot version 2.0.2 (with Tomcat embedded) and Angular version 6.0.1.
 
 ## Prerequisites
 You will need:
- - Apache Maven 3
+ - Apache Maven 3.5.x (tested with 3.5.3)
  - Java 8
-
+Tested on Windows 10.
+ 
 ## Starting application
 
 To start this application execute the following command from main project directory
