@@ -29,7 +29,7 @@ Once the application is started, it can be reached at
 
 Angular app communicates with backend by rest services:
 
-| HTTP Verb | URL                                           | Description                         | Status codes |
-| --------- | --------------------------------------------- | ----------------------------------- | -------------|
-| GET       | http://localhost:8080/countries                  | List all available countries                    | 200 OK|
-| GET       | http://localhost:8080/rate?dailyRate={dailyRate}&country={countryCode}  | Compute monthly rate for country when daily rate is {dailyRate}   | 200 OK, or 400 Bad Request when incorrect parameters |    
+| HTTP Verb | Path                                           | Description                         | Status codes | Parameters |
+| --------- | --------------------------------------------- | ----------------------------------- | -------------|--------------| 
+| GET       | /countries                  | List all available countries                    | 200 OK| No parameters |
+| GET       | /rate?dailyRate={dailyRate}&country={countryCode}  | Compute monthly rate for country when daily rate is {dailyRate}   | 200 OK, or 400 Bad Request when incorrect parameters |  *country* required, must be one of PL, UK, DE; *dailyRate* required, must be number >=1| 
