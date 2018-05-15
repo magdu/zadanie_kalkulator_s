@@ -1,8 +1,8 @@
-package com.magdu.kalkulator.services;
+package com.magdu.calculator.services;
 
-import com.magdu.kalkulator.dto.ExchangeRate;
-import com.magdu.kalkulator.dto.MonthlyRate;
-import com.magdu.kalkulator.enums.Country;
+import com.magdu.calculator.dto.ExchangeRate;
+import com.magdu.calculator.dto.MonthlyRate;
+import com.magdu.calculator.enums.Country;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -41,7 +41,7 @@ public class RateCalculationServiceTest {
 
     MonthlyRate monthlyRate = rateCalculationService.getMonthlyRate(Country.PL, BigDecimal.valueOf(100));
 
-    assertEquals(BigDecimal.valueOf(582).compareTo(monthlyRate.getMonthlyRate()), 0);
+    assertEquals(0, BigDecimal.valueOf(582).compareTo(monthlyRate.getMonthlyRate()));
   }
 
   @Test
@@ -51,7 +51,7 @@ public class RateCalculationServiceTest {
 
     MonthlyRate monthlyRate = rateCalculationService.getMonthlyRate(Country.DE, BigDecimal.valueOf(100));
 
-    assertEquals(BigDecimal.valueOf(4091.04).compareTo(monthlyRate.getMonthlyRate()), 0);
+    assertEquals(0, BigDecimal.valueOf(4091.04).compareTo(monthlyRate.getMonthlyRate()));
   }
 
   @Test
@@ -61,6 +61,6 @@ public class RateCalculationServiceTest {
 
     MonthlyRate monthlyRate = rateCalculationService.getMonthlyRate(Country.UK, BigDecimal.valueOf(100));
 
-    assertEquals(BigDecimal.valueOf(5072.97).compareTo(monthlyRate.getMonthlyRate()), 0);
+    assertEquals(0, BigDecimal.valueOf(5072.97).compareTo(monthlyRate.getMonthlyRate()));
   }
 }

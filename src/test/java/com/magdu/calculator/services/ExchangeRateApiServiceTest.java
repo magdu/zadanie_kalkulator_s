@@ -1,6 +1,6 @@
-package com.magdu.kalkulator.services;
+package com.magdu.calculator.services;
 
-import com.magdu.kalkulator.enums.Country;
+import com.magdu.calculator.enums.Country;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,13 +36,13 @@ public class ExchangeRateApiServiceTest {
       Files.readAllBytes(Paths.get("./src/test/resources/gbp.json")));
     this.mockRestServiceServer.expect(requestTo("http://api.nbp.pl/api/exchangerates/rates/a/gbp/"))
       .andRespond(withSuccess(repositoryDataString, MediaType.APPLICATION_JSON));
-    assertEquals(BigDecimal.valueOf(4.8314).compareTo(exchangeRateApiService.getRate(Country.UK).getMid()), 0);
+    assertEquals(0,BigDecimal.valueOf(4.8314).compareTo(exchangeRateApiService.getRate(Country.UK).getMid()));
 
   }
 
   @Test
   public void whenContryPoland_thenExpectNotFound() {
-    assertEquals(BigDecimal.ONE.compareTo(exchangeRateApiService.getRate(Country.PL).getMid()), 0);
+    assertEquals(0,BigDecimal.ONE.compareTo(exchangeRateApiService.getRate(Country.PL).getMid()));
   }
 
   @Test

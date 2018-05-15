@@ -1,6 +1,6 @@
-package com.magdu.kalkulator.dto;
+package com.magdu.calculator.dto;
 
-import com.magdu.kalkulator.enums.Country;
+import com.magdu.calculator.enums.Country;
 
 import java.math.BigDecimal;
 

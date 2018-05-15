@@ -1,19 +1,35 @@
-# Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
 
-## Development server
+Project is written using Spring Boot version 2.0.0 (with Tomcat embedded)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Prerequisites
+You will need:
+ - Apache Maven 3.0.3
+ - Java 8
 
-## Code scaffolding
+## Starting application
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To start this application execute the following command from main project directory
+```sh
+$ mvn clean spring-boot:run
+```    
 
-## Build
+Or prepare executable:
+```sh
+$  mvn clean package spring-boot:repackage
+```
+Then in your /target directory you will have `CalculatorS-0.0.1-exec.jar` file.  
+To start application run script `calculatorS.sh` from main project directory.     
+     
+Once the application is started, it can be reached at
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+    http://localhost:8080
 
-## Further help
+## REST Endpoints
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Angular app communicates with backend by rest services:
+
+| HTTP Verb | URL                                           | Description                         | Status codes |
+| --------- | --------------------------------------------- | ----------------------------------- | -------------|
+| GET       | http://localhost:8080/countries                  | List all available countries                    | 200 OK|
+| GET       | http://localhost:8080/rate?dailyRate={dailyRate}&country={countryCode}  | Compute monthly rate for country when daily rate is {dailyRate}   | 200 OK, or 400 Bad Request when incorrect parameters |    

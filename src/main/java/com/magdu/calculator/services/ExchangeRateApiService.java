@@ -1,8 +1,8 @@
-package com.magdu.kalkulator.services;
+package com.magdu.calculator.services;
 
 
-import com.magdu.kalkulator.enums.Country;
-import com.magdu.kalkulator.dto.ExchangeRate;
+import com.magdu.calculator.enums.Country;
+import com.magdu.calculator.dto.ExchangeRate;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +22,9 @@ import java.util.HashMap;
 public class ExchangeRateApiService {
   private static final Log LOG = LogFactory.getLog(ExchangeRateApiService.class);
 
-  public static final String CURRENCY_TABLE = "a";
+  private static final String CURRENCY_TABLE = "a";
 
-  private final String URL_TEMPLATE = "http://api.nbp.pl/api/exchangerates/rates/%s/%s/";
+  private static final String URL_TEMPLATE = "http://api.nbp.pl/api/exchangerates/rates/%s/%s/";
 
   private RestTemplate restTemplate;
 
@@ -41,7 +41,9 @@ public class ExchangeRateApiService {
     } else {
       String url = String.format(URL_TEMPLATE, CURRENCY_TABLE, country.getCurrencyCode());
       try {
-        ResponseEntity<ExchangeRate> response = restTemplate.getForEntity(url, ExchangeRate.class);
+        HashMap<String, Object> headers = new HashMap<>();
+        headers.put("Accept", "application/json");
+        ResponseEntity<ExchangeRate> response = restTemplate.getForEntity(url, ExchangeRate.class, headers);
         if (response.getStatusCode().equals(HttpStatus.OK)) {
           data = response.getBody();
         }

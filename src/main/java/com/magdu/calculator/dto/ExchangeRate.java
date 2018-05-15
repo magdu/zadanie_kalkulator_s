@@ -1,4 +1,4 @@
-package com.magdu.kalkulator.dto;
+package com.magdu.calculator.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

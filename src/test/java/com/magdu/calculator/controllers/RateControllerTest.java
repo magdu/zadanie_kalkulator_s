@@ -1,9 +1,9 @@
-package com.magdu.kalkulator.controllers;
+package com.magdu.calculator.controllers;
 
-import com.magdu.kalkulator.KalkulatorSApplication;
-import com.magdu.kalkulator.dto.MonthlyRate;
-import com.magdu.kalkulator.enums.Country;
-import com.magdu.kalkulator.services.RateCalculationService;
+import com.magdu.calculator.CalculatorSApplication;
+import com.magdu.calculator.dto.MonthlyRate;
+import com.magdu.calculator.enums.Country;
+import com.magdu.calculator.services.RateCalculationService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = KalkulatorSApplication.class)
+@SpringBootTest(classes = CalculatorSApplication.class)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 @AutoConfigureMockMvc
 public class RateControllerTest {

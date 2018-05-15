@@ -1,6 +1,6 @@
-package com.magdu.kalkulator.controllers;
+package com.magdu.calculator.controllers;
 
-import com.magdu.kalkulator.enums.Country;
+import com.magdu.calculator.enums.Country;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;

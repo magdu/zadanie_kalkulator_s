@@ -1,8 +1,8 @@
-package com.magdu.kalkulator.services;
+package com.magdu.calculator.services;
 
-import com.magdu.kalkulator.enums.Country;
-import com.magdu.kalkulator.dto.ExchangeRate;
-import com.magdu.kalkulator.dto.MonthlyRate;
+import com.magdu.calculator.enums.Country;
+import com.magdu.calculator.dto.ExchangeRate;
+import com.magdu.calculator.dto.MonthlyRate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

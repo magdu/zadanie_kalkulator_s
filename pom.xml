@@ -3,12 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.magdu.kalkulator</groupId>
-    <artifactId>KalkulatorS</artifactId>
+    <groupId>com.magdu.calculator</groupId>
+    <artifactId>CalculatorS</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
-    <name>KalkulatorS</name>
+    <name>CalculatorS</name>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -72,6 +72,21 @@
                       </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-maven-plugin</artifactId>
+              <executions>
+                <execution>
+                  <goals>
+                    <goal>repackage</goal>
+                  </goals>
+                  <configuration>
+                    <classifier>exec</classifier>
+                    <executable>true</executable>
+                  </configuration>
+                </execution>
+              </executions>
             </plugin>
         </plugins>
     </build>

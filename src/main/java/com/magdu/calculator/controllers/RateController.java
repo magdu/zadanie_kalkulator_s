@@ -1,8 +1,8 @@
-package com.magdu.kalkulator.controllers;
+package com.magdu.calculator.controllers;
 
-import com.magdu.kalkulator.enums.Country;
-import com.magdu.kalkulator.dto.MonthlyRate;
-import com.magdu.kalkulator.services.RateCalculationService;
+import com.magdu.calculator.enums.Country;
+import com.magdu.calculator.dto.MonthlyRate;
+import com.magdu.calculator.services.RateCalculationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
